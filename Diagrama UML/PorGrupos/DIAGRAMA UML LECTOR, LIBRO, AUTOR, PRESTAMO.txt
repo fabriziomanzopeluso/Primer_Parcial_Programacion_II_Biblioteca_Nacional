@@ -1,0 +1,83 @@
+@startuml
+hide circle
+skin rose
+skinparam classAttributeIconSize 0
+
+
+class Autor
+{
+  +Autor(nombre: String, fechaDeNacimiento: LocalDate, nacionalidad: String)
+  +getNombre(): String
+  +setNombre(nombre: String): void
+  +getFechaDeNacimiento(): LocalDate
+  +setFechaDeNacimiento(fechaDeNacimiento: LocalDate)
+  +getNacionalidad(): String
+  +setNacionalidad(nacionalidad: String): void
+  +mostrar(): void
+}
+
+class Lector
+{
+  +Lector()
+  +Lector(nombre: String, contrasenia: String)
+  +mostrar(): void
+  +menu(sistema: SistemaBibliotecaNacional): boolean
+  +getLibrosQueDispones(): ArrayList<Libro>
+  +setLibrosQueDispones(librosQueDispones: ArrayList<Libro>): void
+  +getPrestamos(): ArrayList<Prestamo>
+  +setPrestamos(prestamos: ArrayList<Prestamos>): void
+  +agregarPrestamo(prestamo: Prestamo): void
+  +getDiasSinPoderSolicitarUnLibro(): int
+  -cantidadDeDiasDelPrestamoAHoy(Prestamo: prestamo): int
+  -formulaDeMulta(): int
+  -mostrarLibrosQueDispones(): void
+  -devolverLibroABiblioteca(sistema: SistemaBibliotecaNacional, identificadorLibro: String)
+  -solicitarLibroABiblioteca(sistema: SistemaBibliotecaNacional, mensajeDeSolicitudDeLibro String)
+  +comprobarCantidadDeLibrosQueDispones(): int
+  -quitarRegistroDelPrestamo(li: Libro): void
+}
+
+class Libro
+{
+  +Libro(identificador: String, String nombre, anio: int, autor: Autor, categoria: String, editorial: String)
+  -identificador: String
+  -nombre: String
+  -autor: Autor
+  -año: int
+  -categoria: String
+  -editorial: String
+  +getIdentificador(): String
+  +setIdentificador(identificador: String): void
+  +getAutor(): Autor
+  +setAutor(autor: Autor): void
+  +getNombre(): String
+  +setAutor(autor: Autor): void
+  +getNombre(): String
+  +setNombre(nombre: String): void
+  +getAnio(): int
+  +setAnio(anio: int): void
+  +getCategoria(): String
+  +setCategoria(categoria: String): void
+  +getEditorial(): String
+  +setEditorial(editorial: String): void
+  +coincidenLibroConAlgunoExistente(datos: String, autor: Autor): boolean
+  +coincideElLibroConLaCategoria(categoriaBuscada: String): boolean
+  +coincideElIdentificador(identificadorBuscado: String): boolean
+  +mostrar(): void
+}
+
+
+class Prestamo
+{
+  -fechaDelPrestamo: LocalDate
+  -libroDelPrestamo: Libro
+  +Prestamo(fechaDelPrestamo: LocalDate, libroDelPrestamo: Libro)
+  +getFechaDelPrestamo(): LocalDate
+  +setFechaDelPrestamo(fechaDelPrestamo: LocalDate): void
+  +getLibroDelPrestamo(): Libro
+  +setLibroDelPrestamo(libroDelPrestamo: Libro): void
+  +mostrar(): void
+  +coincideLibroConElLibroDelPrestamo(nombre: String): boolean
+}
+
+@enduml

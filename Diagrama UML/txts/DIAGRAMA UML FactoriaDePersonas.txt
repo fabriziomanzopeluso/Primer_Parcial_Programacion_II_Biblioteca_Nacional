@@ -1,0 +1,4 @@
+class FactoriaDePersonas
+{
+	+crearPersona(sistema: SistemaBibliotecaNacional, tipoDeUsuario: String): void
+}

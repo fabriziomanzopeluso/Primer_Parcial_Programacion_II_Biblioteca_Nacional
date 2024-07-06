@@ -1,0 +1,20 @@
+class Lector
+{
+  +Lector()
+  +Lector(nombre: String, contrasenia: String)
+  +mostrar(): void
+  +menu(sistema: SistemaBibliotecaNacional): boolean
+  +getLibrosQueDispones(): ArrayList<Libro>
+  +setLibrosQueDispones(librosQueDispones: ArrayList<Libro>): void
+  +getPrestamos(): ArrayList<Prestamo>
+  +setPrestamos(prestamos: ArrayList<Prestamos>): void
+  +agregarPrestamo(prestamo: Prestamo): void
+  +getDiasSinPoderSolicitarUnLibro(): int
+  -cantidadDeDiasDelPrestamoAHoy(Prestamo: prestamo): int
+  -formulaDeMulta(): int
+  -mostrarLibrosQueDispones(): void
+  -devolverLibroABiblioteca(sistema: SistemaBibliotecaNacional, identificadorLibro: String)
+  -solicitarLibroABiblioteca(sistema: SistemaBibliotecaNacional, mensajeDeSolicitudDeLibro String)
+  +comprobarCantidadDeLibrosQueDispones(): int
+  -quitarRegistroDelPrestamo(li: Libro): void
+}

@@ -1,0 +1,55 @@
+class Persona
+{
+-usuario: String
+-contrasenia: String
+-setearValoresDePersona: boolean
++getUsuario: String
++setUsuario(usuario: String)
++getContrasenia: String
++setContrasenia(contrasenia: String)
++coincidenUsuarioYContrasenia(datos: String): boolean
++coincideUsuario(usuarioDato: String): boolean
++validacionUsuario(nombreUsuario: String, contrasenia: String): boolean
++esLector(): boolean
+---
++{abstract} void mostrar(): void
++{abstract} menu(): boolean
+}
+
+
+
+
+class FactoriaDePersonas
+{
+	+crearPersona(sistema: SistemaBibliotecaNacional, tipoDeUsuario: String): void
+}
+
+
+
+
+class Administrador
+{
+   +Administrador()
+   +Administrador(nombre: String, contrasenia: String)
+   +menu(sistema: SistemaBibliotecaNacional): boolean
+   +mostrar(): void
+   -altaDeUnLibro(sistema: SistemaBibliotecaNacional): void
+   +eliminarUsuario(sistema: SistemaBibliotecaNacional, usuario: String): void
+}
+
+
+
+
+class Bibliotecario
+{
+   +Bibliotecario()
+   +Bibliotecario(nombre: String, contrasenia: String)
+   +mostrar(): void
+   +menu(sistema: SistemaBibliotecaNacional): boolean
+   -mandarLibroAReparacion(sistema: SistemaBibliotecaNacional, identificadorPedido: String): void
+   -devolverLibroDeReparacionABiblioteca(sistema: SistemaBibliotecaNacional, identificadorPedido: String): void
+   -mandarLibroAPrestamo(sistema: SistemaBibliotecaNacional, identificadorPedido: String, nombreDeUsuario: String): void
+   -mostrarSolicitudesDeLibrosDeLectores(sistema: SistemaBibliotecaNacional): void
+   -eliminarSolicitudesDeLibrosDeLectores(sistema: SistemaBibliotecaNacional): void
+   -eliminarTodasLasSolicitudesDeLibrosDeLectores(sistema: SistemaBibliotecaNacional): void
+}

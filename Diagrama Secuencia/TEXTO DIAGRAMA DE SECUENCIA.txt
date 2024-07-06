@@ -1,0 +1,93 @@
+
+
+@startuml
+actor User
+participant "Administrador" as A
+participant "Bibliotecario" as B
+participant "EntradaSalida" as ES
+participant "FactoriaDePersonas" as FdP
+participant "Persona" as P
+participant "SistemaBibliotecaNacional" as SBN
+
+
+User -> A: menu(SistemaBibliotecaNacional sistema)
+activate A
+
+A -->> FdP: <<create>>
+
+loop opcionElegida != 'B' && opcionElegida != 'C'
+
+	A -> ES: leerCaracter(String msj)
+	activate ES
+	ES --> A: opcionElegida.char
+	deactivate ES
+
+	alt case '2'
+		A -> FdP: crearPersona(SistemaBiblioteca sistema, String tipoDeUsuario)
+		activate FdP
+		FdP -> FdP: String nombrePackage
+		FdP -->> P: <<create>>
+		FdP -> P: setearValoresDePersona(SistemaBibliotecaNacional sistema)
+		activate P
+
+		P -> ES: leerYValidar(String msj)
+		activate ES
+		ES -> P: usuario.String
+		deactivate ES
+
+		P -> ES: leerYValidar(String msj)
+		activate ES
+		ES -> P: contrasenia.String
+		deactivate ES
+
+		P -> SBN: buscarPersonaPorNombre(String usuario)
+		loop personas
+			activate SBN
+			alt
+				SBN -> P: coincideUsuario(String usuarioDato)
+				P --> SBN
+			end
+		end
+		deactivate SBN
+		SBN -> P: p.Persona
+
+		alt p != NULL
+   			P -> P: setUsuario(String usuario)
+   			P -> P: setContrasenia(contrasenia)
+
+		end
+
+		deactivate P
+		P -> FdP: esPersonaValida.boolean
+
+		alt esPersonaValida == true
+			FdP -> SBN: agregarPersonas(Persona p)
+			activate SBN
+			SBN --> FdP
+			deactivate SBN
+
+			FdP -> ES: mostrarMensajePorConsola(String msj)
+			activate ES
+			ES --> FdP
+			deactivate ES
+
+			FdP --> A
+			deactivate FdP
+
+
+			alt opcionElegida >= '1' && opcionElegida <= 'A'
+
+				A -> SBN: serializar(String a)
+				activate SBN
+				SBN --> A
+				deactivate SBN
+
+			end
+		end
+	end
+end
+A --> User
+deactivate A
+@enduml
+
+

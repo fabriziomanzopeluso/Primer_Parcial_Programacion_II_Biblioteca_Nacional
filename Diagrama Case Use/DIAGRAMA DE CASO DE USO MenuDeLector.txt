@@ -1,0 +1,23 @@
+@startuml
+
+left to right direction
+skin rose
+!theme vibrant
+
+rectangle "Menu de Lector" {
+  usecase "Ver todos los libros de la biblioteca" as L1
+  usecase "Ver los libros segun categoria" as L2
+  usecase "Ver los libros que dispones" as L3
+  usecase "Devolver un libro a la biblioteca" as L4
+  usecase "Solicitar un libro a la biblioteca" as L5
+  usecase "Salir del menu" as L6
+}
+
+Lector --> L1
+Lector --> L2
+Lector --> L3
+Lector --> L4
+Lector --> L5
+Lector --> L6
+
+@enduml

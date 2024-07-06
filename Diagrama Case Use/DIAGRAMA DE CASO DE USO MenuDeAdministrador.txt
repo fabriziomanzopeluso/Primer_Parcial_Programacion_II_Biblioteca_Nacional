@@ -1,0 +1,35 @@
+@startuml
+
+left to right direction
+skin rose
+!theme vibrant
+
+rectangle "Menu de Administrador" {
+  usecase "Salir del menu" as A1
+  usecase "Salir del sistema" as A2
+  usecase "Mostrar todos los Usuarios" as A3
+  usecase "Eliminar un usuario (lector o bibliotecario)" as A4
+  usecase "Cargar un libro" as A5
+  usecase "Mostrar todos los libros" as A6
+  usecase "Mostrar sólamente a los administradores" as A7
+  usecase "Mostrar sólamente a los bibliotecarios" as A8
+  usecase "Mostrar sólamente a los lectores" as A9
+  usecase "Crear un Administrador" as A10
+  usecase "Crear un Bibliotecario" as A11
+  usecase "Crear un Lector" as A12
+}
+
+Administrador --> A1
+Administrador --> A2
+Administrador --> A3
+Administrador --> A4
+Administrador --> A5
+Administrador --> A6
+Administrador --> A7
+Administrador --> A8
+Administrador --> A9
+Administrador --> A10
+Administrador --> A11
+Administrador --> A12
+
+@enduml

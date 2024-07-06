@@ -1,0 +1,40 @@
+@startuml
+hide circle
+skin rose
+skinparam classAttributeIconSize 0
+
+class SistemaBibliotecaNacional {
+
+-mensajeDeBienvenida(): void
++getFechaActual(): LocalDate
++deSerializar(a: String): SistemaBibliotecaNacional
++serializar(a: String): SistemaBibliotecaNacional
++iniciarSesionDeUsuario(): Persona
++getPersonas(): ArrayList<Persona>
++setPersonas(personas: ArrayList<Persona>): void
++getLibros(): ArrayList<Libro>
++setLibros(libros: ArrayList<Libro>): void
++getLibrosEnReparacion(): ArrayList<Libro>
++setLibrosEnReparacion(librosEnReparacion: ArrayList<Libro>): void
++getSolicitudesDePrestamosDeLibros(): ArrayList<String>
++setSolicitudesDePrestamosDeLibros(solicitudesDePrestamosDeLibros: ArrayList<String>): void
++getCategoriasDeLibros(): String[]
++quitarUsuarioDelSistema(persona: Persona): void
++agregarSolicitudDePrestamoDeLibro(mensajeDeSolicitud: String): void
++agregarLibro(li: Libro): void
++setCategoriasDeLibros(categoriasDeLibros: String[]): void
++buscarPersonaPorTodosSusDatos(datos: String): Persona
++buscarPersonaPorNombre(usuario: String): Persona
++buscarLibroPorTodosSusDatos(datos: String, autor: Autor): Libro
++buscarLibroPorIdentificador(identificador: String): Libro
++mostrarUsuarios(): void
++mostrarUsuariosSegunTipo(tipoClase: class): void
++mostrarLibros(): void
++mostrarLibrosEnReparación(): void
++mostrarLibrosSegunCategoria(categoriaBuscada: String): void
++mostrarLibrosEnPrestamoALectores(): void
++validarCategoriaDeLibro(msj: String): String
++sacarLibroDeBiblioteca(libro: Libro): void
+				}
+				
+@enduml

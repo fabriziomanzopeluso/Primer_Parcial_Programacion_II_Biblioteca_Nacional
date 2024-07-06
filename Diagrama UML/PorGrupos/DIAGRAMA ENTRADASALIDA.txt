@@ -1,0 +1,26 @@
+@startuml
+
+left to right direction
+hide circles
+skin rose
+!theme vibrant
+
+skinparam classAttributeIconSize 0
+
+class EntradaSalida
+{
+  +leerString(msj: String): String
+  +leerString(): String
+  +leerEntero(msj: String): int
+  +leerBooleano(msj: String): boolean
+  +leerBooleano(): boolean
+  +leerCaracter(msj: String): char
+  +leerCaracter(): char
+  +mostrarMensajeDeError(mensaje: String): void
+  +esTextoValido(cadena: String): boolean
+  +leerYValidar(msj: String): String
+  +esNumeroValido(numero: int): boolean
+  +leerYValidarEntero(msj: String): int
+  +pedirYValidarFecha(msj: String): LocalDate
+}
+@enduml

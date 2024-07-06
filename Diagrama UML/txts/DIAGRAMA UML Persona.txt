@@ -1,0 +1,17 @@
+class Persona
+{
+-usuario: String
+-contrasenia: String
+-setearValoresDePersona: boolean
++getUsuario: String
++setUsuario(usuario: String)
++getContrasenia: String
++setContrasenia(contrasenia: String)
++coincidenUsuarioYContrasenia(datos: String): boolean
++coincideUsuario(usuarioDato: String): boolean
++validacionUsuario(nombreUsuario: String, contrasenia: String): boolean
++esLector(): boolean
+---
++{abstract} void mostrar(): void
++{abstract} menu(): boolean
+}

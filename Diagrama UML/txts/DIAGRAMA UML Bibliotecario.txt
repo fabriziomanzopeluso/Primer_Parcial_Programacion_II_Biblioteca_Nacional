@@ -1,0 +1,13 @@
+class Bibliotecario
+{
+   +Bibliotecario()
+   +Bibliotecario(nombre: String, contrasenia: String)
+   +mostrar(): void
+   +menu(sistema: SistemaBibliotecaNacional): boolean
+   -mandarLibroAReparacion(sistema: SistemaBibliotecaNacional, identificadorPedido: String): void
+   -devolverLibroDeReparacionABiblioteca(sistema: SistemaBibliotecaNacional, identificadorPedido: String): void
+   -mandarLibroAPrestamo(sistema: SistemaBibliotecaNacional, identificadorPedido: String, nombreDeUsuario: String): void
+   -mostrarSolicitudesDeLibrosDeLectores(sistema: SistemaBibliotecaNacional): void
+   -eliminarSolicitudesDeLibrosDeLectores(sistema: SistemaBibliotecaNacional): void
+   -eliminarTodasLasSolicitudesDeLibrosDeLectores(sistema: SistemaBibliotecaNacional): void
+}

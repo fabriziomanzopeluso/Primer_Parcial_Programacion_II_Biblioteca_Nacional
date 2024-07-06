@@ -1,0 +1,11 @@
+class Autor
+{
+  +Autor(nombre: String, fechaDeNacimiento: LocalDate, nacionalidad: String)
+  +getNombre(): String
+  +setNombre(nombre: String): void
+  +getFechaDeNacimiento(): LocalDate
+  +setFechaDeNacimiento(fechaDeNacimiento: LocalDate)
+  +getNacionalidad(): String
+  +setNacionalidad(nacionalidad: String): void
+  +mostrar(): void
+}

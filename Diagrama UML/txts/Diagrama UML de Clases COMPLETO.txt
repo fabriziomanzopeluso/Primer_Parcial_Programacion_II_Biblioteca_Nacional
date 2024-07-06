@@ -1,0 +1,97 @@
+@startuml
+
+hide circles
+skin rose
+
+
+class Control
+{
+}
+
+class SistemaBibliotecaNacional
+{
+}
+
+
+
+
+
+
+class Persona
+{
+}
+
+class FactoriaDePersonas
+{
+}
+
+
+
+class Administrador
+{
+}
+
+
+class Bibliotecario
+{
+}
+
+
+class Lector
+{
+}
+
+
+
+
+
+
+class Libro
+{
+}
+
+
+
+
+class Prestamo
+{
+}
+
+
+
+
+
+class Autor
+{
+}
+
+
+
+
+class EntradaSalida
+{
+}
+
+
+
+Control ..> SistemaBibliotecaNacional
+SistemaBibliotecaNacional "1" *--- "*" Libro : libros
+SistemaBibliotecaNacional "1" *---- "*" Libro : librosEnReparacion
+Persona "*" -up-* "1" SistemaBibliotecaNacional : personas
+Bibliotecario --up-|> Persona
+Administrador --up-|> Persona
+Lector -up--|> Persona
+
+Bibliotecario ..> Prestamo
+
+Prestamo "*" -up-* "1" Lector : prestamos
+Libro "*" -up--* "1" Lector : librosQueDispones
+Libro -right-> Autor
+
+Administrador ..> FactoriaDePersonas
+
+
+
+
+
+@enduml

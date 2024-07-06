@@ -1,0 +1,14 @@
+@startuml
+skin rose
+
+!theme vibrant
+
+(Ingresar mediante usuario y contraseña) as (Ingreso)
+
+left to right direction
+Persona--> (Ingreso)
+(Ingreso) <-- Administrador
+(Ingreso) <-- Bibliotecario
+(Ingreso) <-- Lector
+
+@enduml

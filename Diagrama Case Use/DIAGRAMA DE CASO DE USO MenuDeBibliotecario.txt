@@ -1,0 +1,34 @@
+@startuml
+
+left to right direction
+skin rose
+!theme vibrant
+
+rectangle "Menu de Bibliotecario" {
+  usecase "Salir del menu" as B1
+  usecase "Eliminar todas las solicitudes de libros de los lectores" as B2
+  usecase "Eliminar una solicitud de libro de un lector" as B3
+  usecase "Ver las solicitudes de libros de los lectores" as B4
+  usecase "Ver los libros a préstamo" as B5
+  usecase "Ver los libros en reparación" as B6
+  usecase "Dar un libro a préstamo" as B7
+  usecase "Devolver libro de reparación a la biblioteca" as B8
+  usecase "Mandar un libro a reparación" as  B9
+  usecase "Ver libros según una categoría" as B10
+  usecase "Ver todos los libros" as B11
+}
+
+Bibliotecario --> B1
+Bibliotecario --> B2
+Bibliotecario --> B3
+Bibliotecario --> B4
+Bibliotecario --> B5
+Bibliotecario --> B6
+Bibliotecario --> B7
+Bibliotecario --> B8
+Bibliotecario --> B9
+Bibliotecario --> B10
+Bibliotecario --> B11
+
+
+@enduml

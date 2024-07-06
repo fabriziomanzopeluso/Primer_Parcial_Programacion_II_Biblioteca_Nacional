@@ -1,0 +1,13 @@
+class Prestamo
+{
+  -fechaDelPrestamo: LocalDate
+  -libroDelPrestamo: Libro
+  +Prestamo(fechaDelPrestamo: LocalDate, libroDelPrestamo: Libro)
+  +getFechaDelPrestamo(): LocalDate
+  +setFechaDelPrestamo(fechaDelPrestamo: LocalDate): void
+  +getLibroDelPrestamo(): Libro
+  +setLibroDelPrestamo(libroDelPrestamo: Libro): void
+  +mostrar(): void
+  +coincideLibroConElLibroDelPrestamo(nombre: String): boolean
+  
+}

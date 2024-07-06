@@ -1,0 +1,9 @@
+class Administrador
+{
+   +Administrador()
+   +Administrador(nombre: String, contrasenia: String)
+   +menu(sistema: SistemaBibliotecaNacional): boolean
+   +mostrar(): void
+   -altaDeUnLibro(sistema: SistemaBibliotecaNacional): void
+   +eliminarUsuario(sistema: SistemaBibliotecaNacional, usuario: String): void
+}
